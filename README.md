@@ -153,3 +153,9 @@ npm start          # Production API/static server
 npm run import:csv # Import the bundled dataset
 npm run check      # Server syntax checks
 ```
+
+### Deploying as a Render Docker service
+
+A production `Dockerfile` is also included. If the Render service runtime is set to **Docker**, Render builds it automatically; no custom Docker build or start command is needed. Configure the same environment variables listed above. The container listens on Render's `PORT` value and starts with `npm start`.
+
+If Render reports `failed to read dockerfile`, redeploy the latest commit containing the repository-root `Dockerfile`, or change the service runtime from Docker to Node and use the Blueprint configuration.
